@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Tienda.Abstraccion.Repositorio;
+using Tienda.Abstraccion.Servicios;
 using Tienda.Implementaciones.Repositorio;
+using Tienda.Implementaciones.Servicios;
 using Tienda.Modelos;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +19,16 @@ builder.Services.AddScoped<IRepositorioDetProducto, RepositorioDetProducto>();
 builder.Services.AddScoped<IRepositorioFactura, RepositorioFactura>();
 builder.Services.AddScoped<IRepositorioFoto, RepositorioFoto>();
 builder.Services.AddScoped<IRepositorioProducto, RepositorioProducto>();
+builder.Services.AddScoped<IServiciosCliente, ServiciosCliente>();
+builder.Services.AddScoped<IServiciosDetProducto, ServiciosDetProducto>();
+builder.Services.AddScoped<IServiciosFactura, ServiciosFactura>();
+builder.Services.AddScoped<IServiciosFoto, ServiciosFoto>();
+builder.Services.AddScoped<IServiciosProducto, ServiciosProducto>();
+
+
+
+
+
 
 var app = builder.Build();
 
